@@ -1,0 +1,311 @@
+/* Custom CSS for Portfolio */
+:root {
+    --primary: #2bb62b;
+    --secondary: #ffffff;
+    --light: #f8f9fa;
+    --dark: #ffffff;
+}
+.btn-redondeado {
+    width: 170px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 12px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    /* Propiedades para la animación */
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    animation: aparecerBtn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation-delay: 1s;
+}
+
+/* Animación de aparición */
+@keyframes aparecerBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    70% {
+        transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.btn-redondeado:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+/* Efecto en el icono de flecha */
+.btn-redondeado:hover::after {
+    content: ' >>';
+    transform: translateX(3px);
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #000000;
+    padding-top: 76px; /* Altura del navbar */
+    
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 70px;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5faee3;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+    background-color: transparent;
+    
+}
+
+/* Navbar completamente transparente */
+.navbar {
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+    border-bottom: none; /* Línea sutil para definir el navbar */
+   
+}
+
+/* Navbar con color al hacer scroll (opcional) */
+.navbar.navbar-scrolled {
+    background-color: rgba(15, 23, 42, 0.95) !important; /* Color oscuro con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero section transparente */
+.hero {
+    background-color: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fondo para el contenido del hero (opcional) */
+.hero-content {
+    background: rgba(255, 255, 255, 0.1); /* Fondo claro semitransparente */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+/* O si prefieres fondo oscuro */
+
+
+/* Asegurar que el contenido no se oculte detrás del navbar fijo */
+body {
+    padding-top: 70px;
+}
+
+/* Ajustar la sección hero */
+.hero {
+    margin-top: -70px;
+    padding-top: 70px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Si quieres un fondo de video para el hero */
+.hero-with-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* O con un gradiente sutil */
+.hero-with-gradient {
+    background: linear-gradient(135deg, rgba(101, 119, 134, 0.3) 0%, rgba(101, 119, 134, 0.1) 100%);
+}
+
+/* Para texto que contraste con fondos transparentes */
+.hero h1, .hero h2, .hero p {
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.3); /* Sombra de texto para mejor legibilidad */
+}
+
+.navbar-brand, .nav-link {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+/* Hero Section */
+.hero {
+    width: 100%;
+    background: url('../img/hero-bg.jpg') top center no-repeat;
+    background-size: cover;
+}
+
+.hero h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: transparent;
+}
+
+.hero h2 {
+    color: #484848;
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+.hero .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: var(--primary);
+    margin: 0 15px 0 0;
+}
+
+.hero .btn-get-started:hover {
+    background: #5faee3;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #000000;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+    bottom: 0;
+    left: calc(50% - 25px);
+}
+
+.section-title p {
+    margin-bottom: 0;
+}
+
+/* Skills */
+.skills .progress {
+    height: 60px;
+    display: block;
+    background: #ffffff;
+    border-radius: 0;
+    color: #000000;
+}
+
+.skills .progress .skill {
+    padding: 10px 0;
+    margin: 0;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    color: #000000;
+}
+
+.skills .progress .skill .val {
+    float: right;
+    font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+    background: #ffffff;
+    height: 10px;
+}
+
+.skills .progress-bar {
+    width: 1px;
+    height: 10px;
+    transition: .9s;
+    background-color: var(--primary);
+}
+
+/* Animations */
+.animate__animated.animate__pulse {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Tilt effect for cards */
+.tilt {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.tilt-inner {
+    transform: translateZ(20px);
+}
+
+/* Custom button animations */
+.btn-custom {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-custom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    transition: .5s;
+}
+
+.btn-custom:hover::before {
+    left: 100%;
+}
+
+.navbar.navbar-scrolled {
+    background-color: transparent !important; /* Color original con transparencia */
+    box-shadow: 0 3px 10px transparent !important;
+    border: none;
+}
